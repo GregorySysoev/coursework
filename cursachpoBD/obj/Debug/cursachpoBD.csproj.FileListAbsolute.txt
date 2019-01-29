@@ -1,0 +1,13 @@
+C:\Users\User\Documents\cursachpoBD\cursachpoBD\bin\Debug\cursachpoBD.exe.config
+C:\Users\User\Documents\cursachpoBD\cursachpoBD\bin\Debug\cursachpoBD.exe
+C:\Users\User\Documents\cursachpoBD\cursachpoBD\bin\Debug\cursachpoBD.pdb
+C:\Users\User\Documents\cursachpoBD\cursachpoBD\obj\Debug\cursachpoBD.Analyst.resources
+C:\Users\User\Documents\cursachpoBD\cursachpoBD\obj\Debug\cursachpoBD.Authorization.resources
+C:\Users\User\Documents\cursachpoBD\cursachpoBD\obj\Debug\cursachpoBD.Bank.resources
+C:\Users\User\Documents\cursachpoBD\cursachpoBD\obj\Debug\cursachpoBD.Cashbox.resources
+C:\Users\User\Documents\cursachpoBD\cursachpoBD\obj\Debug\cursachpoBD.Properties.Resources.resources
+C:\Users\User\Documents\cursachpoBD\cursachpoBD\obj\Debug\cursachpoBD.csproj.GenerateResource.cache
+C:\Users\User\Documents\cursachpoBD\cursachpoBD\obj\Debug\cursachpoBD.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\cursachpoBD\cursachpoBD\obj\Debug\cursachpoBD.exe
+C:\Users\User\Documents\cursachpoBD\cursachpoBD\obj\Debug\cursachpoBD.pdb
+C:\Users\User\Documents\cursachpoBD\cursachpoBD\obj\Debug\cursachpoBD.csprojAssemblyReference.cache

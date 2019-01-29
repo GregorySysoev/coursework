@@ -1,0 +1,10 @@
+C:\Users\User\Documents\cursachpoBD\cursachpoBD\bin\Release\cursachpoBD.exe.config
+C:\Users\User\Documents\cursachpoBD\cursachpoBD\bin\Release\cursachpoBD.exe
+C:\Users\User\Documents\cursachpoBD\cursachpoBD\bin\Release\cursachpoBD.pdb
+C:\Users\User\Documents\cursachpoBD\cursachpoBD\obj\Release\cursachpoBD.Authorization.resources
+C:\Users\User\Documents\cursachpoBD\cursachpoBD\obj\Release\cursachpoBD.Cashbox.resources
+C:\Users\User\Documents\cursachpoBD\cursachpoBD\obj\Release\cursachpoBD.Properties.Resources.resources
+C:\Users\User\Documents\cursachpoBD\cursachpoBD\obj\Release\cursachpoBD.csproj.GenerateResource.cache
+C:\Users\User\Documents\cursachpoBD\cursachpoBD\obj\Release\cursachpoBD.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\cursachpoBD\cursachpoBD\obj\Release\cursachpoBD.exe
+C:\Users\User\Documents\cursachpoBD\cursachpoBD\obj\Release\cursachpoBD.pdb
