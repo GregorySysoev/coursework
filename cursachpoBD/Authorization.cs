@@ -44,8 +44,15 @@ namespace cursachpoBD
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Bank bank = new Bank();
-            bank.ShowDialog();
+            int abc = 0;
+            if ((int.TryParse(textBox3.Text, out abc)) && (abc == 54321))
+            {
+                Bank bank = new Bank();
+                bank.ShowDialog();
+            } else
+            {
+                MessageBox.Show("Ошибка: неверный пароль для Банка");
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -59,17 +66,20 @@ namespace cursachpoBD
                 dbcom = new OleDbCommand(query);
                 dbcom.Connection= dbase;
                 OleDbDataReader reader = dbcom.ExecuteReader();
-                reader.Read();
-                var result = reader;
-
-                if (result != null)
+                if (reader.Read())
                 {
-                    Cashbox cashbox = new Cashbox(Int32.Parse(reader["№ кассы"].ToString()), reader["ФИО кассира"].ToString());
-                    cashbox.ShowDialog();
+                    int abc = 1;
+                    if ((int.TryParse(textBox2.Text, out abc)) && (abc == 12345)) {
+                        Cashbox cashbox = new Cashbox(Int32.Parse(reader["№ кассы"].ToString()), reader["ФИО кассира"].ToString());
+                        cashbox.ShowDialog();
+                    } else
+                    {
+                        MessageBox.Show("Ошибка: неверный пароль для Кассы");
+                    }
                 }
                 else
                 {
-
+                    MessageBox.Show("Ошибка: кассы с данным номером не существует");
                 }
 
             }

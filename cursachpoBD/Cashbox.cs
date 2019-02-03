@@ -80,44 +80,97 @@ namespace cursachpoBD
         private void button1_Click(object sender, EventArgs e)
         {
             string query;
-            if (buy == true)
+
+            bool wasError = false;
+
+            int tb3 = 0;
+            int tb2 = 0;
+            long tb1 = 0;
+
+            bool e3 = int.TryParse(textBox3.Text, out tb3);
+            bool e2 = int.TryParse(textBox2.Text, out tb2);
+            bool e1 = Int64.TryParse(textBox1.Text, out tb1);
+            
+            
+            if (!e3 ||(tb3 < 2) || (tb3 > 15) || (textBox3.Text.Length != 3))
             {
-                query = "INSERT INTO [Сделка] ([Номер кассы],[Номер паспорта клиента]," +
-                    "[Дата сделки],[Время сделки],[Код проданной валюты],[Код купленной валюты]," +
-                    "[Количество проданной валюты],[Количество купленной валюты]) VALUES" +
-                    " (" + "'" +indexOfCash+ "'" + "," + "'" + Int64.Parse(textBox1.Text) + "'" + "," + "'" + date.ToShortDateString() + "'" + "," +
-                    "'" + date.ToShortTimeString() + "'" + "," + "'0'" + ","+"'"+ textBox3.Text + "'" + "," + "'0'" + ","
-                    + "'" + textBox2.Text +"'"+ ")";
-            } else
-            {
-                query = "INSERT INTO [Сделка] ([Номер кассы],[Номер паспорта клиента]," +
-                    "[Дата сделки],[Время сделки],[Код проданной валюты],[Код купленной валюты]," +
-                    "[Количество проданной валюты],[Количество купленной валюты]) VALUES" +
-                    " (" + "'" + indexOfCash + "'" + "," + "'" + Int64.Parse(textBox1.Text) + "'" + "," + "'" + date.ToShortDateString() + "'" + "," +
-                    "'" + date.ToShortTimeString() + "'" + "," + "'" + textBox3.Text + "'" + "," + "'0'" + "," + "'" + textBox2.Text + "'" + ","
-                    + "'0'" + ")";
+                MessageBox.Show("Ошибка: неверный код валюты");
+                wasError = true;
             }
 
-            dbcom = new OleDbCommand(query);
-            dbcom.Connection = dbase;
-            OleDbDataReader reader = dbcom.ExecuteReader();
-            reader.Read();
-            var result = reader;
+            if (!e2 || (tb2 <= 0) || (tb2 > 500000))
+            {
+                MessageBox.Show("Ошибка: недопустимое количество валюты");
+                wasError = true;
+            }
+
+            if (!e1 || (textBox1.Text.Length != 10))
+            {
+                MessageBox.Show("Ошибка: неправильно введенный паспорт");
+                wasError = true;
+            }
+
+
+
+
+            if (radioButton1.Checked)
+            {
+                buy = true;
+            } else
+            {
+                buy = false;
+            }
+
+
+
+
+
+
+            if (!wasError)
+            {
+                if (buy == true)
+                {
+                    query = "INSERT INTO [Сделка] ([Номер кассы],[Номер паспорта клиента]," +
+                        "[Дата сделки],[Время сделки],[Код проданной валюты],[Код купленной валюты]," +
+                        "[Количество проданной валюты],[Количество купленной валюты]) VALUES" +
+                        " (" + "'" + indexOfCash + "'" + "," + "'" + (textBox1.Text) + "'" + "," + "'" + date.ToShortDateString() + "'" + "," +
+                        "'" + date.ToShortTimeString() + "'" + "," + "'0'" + "," + "'" + textBox3.Text + "'" + "," + "'0'" + ","
+                        + "'" + textBox2.Text + "'" + ")";
+                }
+                else
+                {
+                    query = "INSERT INTO [Сделка] ([Номер кассы],[Номер паспорта клиента]," +
+                        "[Дата сделки],[Время сделки],[Код проданной валюты],[Код купленной валюты]," +
+                        "[Количество проданной валюты],[Количество купленной валюты]) VALUES" +
+                        " (" + "'" + indexOfCash + "'" + "," + "'" + (textBox1.Text) + "'" + "," + "'" + date.ToShortDateString() + "'" + "," +
+                        "'" + date.ToShortTimeString() + "'" + "," + "'" + textBox3.Text + "'" + "," + "'0'" + "," + "'" + textBox2.Text + "'" + ","
+                        + "'0'" + ")";
+                }
+
+                dbcom = new OleDbCommand(query);
+                dbcom.Connection = dbase;
+                OleDbDataReader reader = dbcom.ExecuteReader();
+                reader.Read();
+                var result = reader;
+            }
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            buy = true;
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-            buy = false;
         }
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
